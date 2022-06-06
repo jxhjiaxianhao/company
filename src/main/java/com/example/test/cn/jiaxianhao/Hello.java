@@ -8,6 +8,7 @@ public class Hello {
 
     @Override
     public int hashCode() {
+
         return super.hashCode();
 
     }
