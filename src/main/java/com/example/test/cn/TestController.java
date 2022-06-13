@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -17,7 +18,7 @@ public class TestController {
 
 
     @RequestMapping("/shell")
-    public String execShell(@RequestParam(value = "batchNo" ) String batchNo) throws IOException {
+    public String execShell(@RequestParam(value = "batchNo",required = false ) String batchNo) throws IOException {
         Process exec = Runtime.getRuntime().exec("/usr/local/lims/1.sh" + " \"" + batchNo + "\"");
         InputStream inputStream = exec.getInputStream();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
@@ -40,11 +41,16 @@ public class TestController {
     }
 
     @GetMapping("/111")
-    public String file()  {
-        Son.i.set(Son.integer);
-        Son.integer=89;
-        System.out.println(Son.i.get());
-        return null;
+    public String file(@RequestBody Map<String, Date> age)  {
+        System.out.println(age.get("age").getTime());
+       return "";
+    }
+
+
+    @PostMapping("/1112")
+    public String test(@RequestParam String name)  {
+        System.out.println(name);
+        return "ok";
     }
 
 }

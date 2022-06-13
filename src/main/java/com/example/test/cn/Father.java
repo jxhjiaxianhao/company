@@ -25,4 +25,9 @@ public class Father {
         }
         return false;
     }
+
+    public void tt(String... args){
+        System.out.println(args);
+
+    }
 }
