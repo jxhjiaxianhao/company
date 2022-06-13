@@ -14,6 +14,6 @@ public class UserImpl implements User1<String>{
     @Override
     public void update(String s) {
 
-
+        System.out.println("eeeee");
     }
 }
