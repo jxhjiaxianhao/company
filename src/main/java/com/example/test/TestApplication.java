@@ -28,6 +28,7 @@ public class TestApplication {
 
     @Bean
     public Do uppercase1() {
+
         return () -> System.out.println("000");
     }
 
