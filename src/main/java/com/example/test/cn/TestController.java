@@ -47,7 +47,7 @@ public class TestController {
     }
 
 
-    @PostMapping("/1112")
+    @PostMapping( "/ww")
     public String test(@RequestParam String name)  {
         System.out.println(name);
         return "ok";
