@@ -22,6 +22,7 @@ public class TestApplication {
 
     @Bean
     public Function<String, String> uppercase() {
+        System.out.println("5555");
         return value ->
                 value.toUpperCase();
     }
